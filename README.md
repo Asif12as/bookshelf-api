@@ -83,7 +83,7 @@ npm start
   curl -X POST http://localhost:3000/api/books \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-    -d '{"title":"Godan","author":"Munshi Premchand","genre":"Fiction","description":"A classic Hindi novel depicting the struggles of Indian farmers and rural society","publishedYear":1925}'
+    -d '{"title":"Godan","author":"Munshi Premchand","genre":"Fiction","description":"A classic Hindi novel depicting the struggles of Indian farmers and rural society"}'
   ```
 
 - **GET /api/books** - Get all books (with pagination and filters)
@@ -95,7 +95,7 @@ npm start
   curl http://localhost:3000/api/books?page=1&limit=10
   
   # With filters
-  curl http://localhost:3000/api/books?genre=Fiction&author=Fitzgerald
+  curl http://localhost:3000/api/books?genre=as_per&author=as_per
   ```
 
 - **GET /api/books/:id** - Get book details by ID
@@ -131,7 +131,7 @@ npm start
 
 - **GET /api/search** - Search books by title or author
   ```bash
-  curl http://localhost:3000/api/search?query=Fitzgerald
+  curl http://localhost:3000/api/search?query=as_per
   ```
 
 ## Database Schema
