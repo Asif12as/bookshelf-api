@@ -1,0 +1,59 @@
+### Register a new user
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+  "name": "md ashif",
+  "email": "test@asif.com",
+  "password": "password123"
+}
+
+###
+
+### Login user
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "test@asif.com",
+  "password": "password123"
+}
+
+###
+
+### Add a book (replace YOUR_TOKEN with actual token from signup/login)
+POST http://localhost:3000/books
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4M2E0N2VlN2U1NzNlOTUwMmZjMGJiNSIsImlhdCI6MTc0ODY1MDE2MiwiZXhwIjoxNzU2NDI2MTYyfQ.NLi_t3V8dvoyb_9wgCYuW4hhGE1eSmZo8051O4pWUIc
+
+{
+  "title": "Godan",
+  "author": "Munshi Premchand",
+  "genre": "Fiction",
+  "description": "A classic Hindi novel depicting the struggles of Indian farmers and rural society"
+}
+
+
+### Get all books
+GET http://localhost:3000/books
+
+
+### Get book by ID (replace BOOK_ID with actual book ID)
+GET http://localhost:3000/books/BOOK_ID
+
+###
+
+### Submit a review (replace BOOK_ID and YOUR_TOKEN)
+POST http://localhost:3000/books/BOOK_ID/reviews
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN
+
+{
+  "rating": 5,
+  "comment": "Excellent book! Highly recommended."
+}
+
+###
+
+### Search books
+GET http://localhost:3000/search?q=godan
